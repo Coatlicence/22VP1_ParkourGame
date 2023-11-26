@@ -26,6 +26,9 @@ public class _PlayerController : MonoBehaviour
     protected void Update()
     {
         if (jumper && Input.GetKeyDown(KeyCode.Space)) ; //jumper.Jump();
+
+        if (see) See();
+
     }
 
     void Move()
@@ -34,5 +37,13 @@ public class _PlayerController : MonoBehaviour
         float z = Input.GetAxisRaw("Vertical");
 
         //walker.Move(x, z);
+    }
+
+    void See()
+    {
+        float x = Input.GetAxisRaw("Mouse X");
+        float y = Input.GetAxisRaw("Mouse Y");
+
+        see.See(x, y);
     }
 }

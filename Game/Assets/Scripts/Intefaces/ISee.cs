@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class ISee : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("References")]
+    [SerializeField] private Camera cam;
+    [SerializeField] private GameObject go;
+
+    float _x = 0, _y = 0;
+
     void Start()
     {
-        
+        if (!cam) cam = GetComponent<Camera>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void See(float x, float y)
     {
-        
+        _x += x;
+        _y += y;
+
+        cam.transform.rotation = Quaternion.Euler(-_y, _x, 0f);
+
+        go.transform.rotation = Quaternion.Euler(go.transform.rotation.x, _x, go.transform.rotation.z);
     }
 }
