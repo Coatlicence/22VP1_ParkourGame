@@ -38,7 +38,7 @@ public class _PlayerController : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
 
-        //walker.Move(x, z);
+        walker.Move(x, z);
     }
 
     void See()
