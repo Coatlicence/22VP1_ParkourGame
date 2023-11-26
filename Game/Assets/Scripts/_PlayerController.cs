@@ -25,7 +25,9 @@ public class _PlayerController : MonoBehaviour
 
     protected void Update()
     {
-        if (jumper && Input.GetKeyDown(KeyCode.Space)) ; //jumper.Jump();
+        if (jumper && Input.GetKeyDown(KeyCode.Space)) 
+            if(Physics.Raycast(transform.position, Vector3.down, 1f) )
+                jumper.Jump(); 
 
         if (see) See();
 
