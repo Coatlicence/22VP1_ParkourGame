@@ -22,6 +22,8 @@ public class ISee : MonoBehaviour
 
         cam.transform.rotation = Quaternion.Euler(-_y, _x, 0f);
 
-        go.transform.rotation = Quaternion.Euler(go.transform.rotation.x, _x, go.transform.rotation.z);
+        transform.rotation = Quaternion.Euler(go.transform.rotation.x, _x, go.transform.rotation.z);
+
+        
     }
 }
